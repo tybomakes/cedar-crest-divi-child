@@ -1,0 +1,14 @@
+{
+  "name": "divi-child",
+  "version": "1.0.0",
+  "description": "This is a child theme produced by the Elegant Market Place child theme maker. It is solely produced to work with the Divi theme by Elegant Themes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nutrition-label-jquery-plugin": "^10.0.6"
+  }
+}

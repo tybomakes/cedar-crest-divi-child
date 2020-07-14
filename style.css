@@ -1,0 +1,174 @@
+/* 
+ Theme Name:     Divi Child
+ Author:         Tim McCormick
+ Author URI:     http://website.com/
+ Template:       Divi
+ Version:        v 0.1
+ Description:   A Child Theme built using the elegantmarketplace.com Child theme maker
+Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Free to use and duplicate as many times as you like
+ Wordpress Version: 4.9.6
+*/ 
+
+/**
+  * Custom Woocommerce stuff
+  */
+
+.single-product .et_pb_gutters2 .et_pb_column_2_3 > .et_pb_row_inner > .et_pb_column_1_3,
+.single-product .et_pb_gutters2 .et_pb_column_2_3 > .et_pb_row_inner > .et_pb_column_1_3 {
+  width: 47.716%;
+}
+
+@media (min-width: 981px) {
+  .et_pb_gutters2 .et_pb_column {
+    margin-right: 0 !important;
+  }
+}
+
+
+.banner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background: #43abde;
+  padding: 120px 15px;
+}
+
+.banner-text {
+  max-width: 450px;
+}
+
+.size-tabs,
+.product-info {
+  margin: 60px 0;
+}
+
+.size-tabs {
+  display: flex;
+  justify-content: center;
+}
+
+.size-tabs > * {
+  margin: 12px 30px;
+}
+
+.product-info {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+
+
+/* NUTRITION LABELS */
+.size-activator {
+  opacity: .55;
+}
+.size-activator.active {
+  opacity: 1;
+} 
+
+.performance-facts {
+  border: 1px solid black;
+  margin: 20px;
+  float: left;
+  width: 90%;
+  padding: 0.5rem;
+}
+
+.performance-facts.hide {
+  display: none;
+}
+
+.performance-facts table {
+  border-collapse: collapse;
+}
+
+.performance-facts__title {
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 0 0 0.25rem 0;
+}
+
+.performance-facts__header {
+  border-bottom: 10px solid black;
+  padding: 0 0 0.25rem 0;
+  margin: 0 0 0.5rem 0;
+}
+.performance-facts__header p {
+  margin: 0;
+}
+
+.performance-facts__table, .performance-facts__table--small, .performance-facts__table--grid {
+  width: 100%;
+}
+.performance-facts__table thead tr th, .performance-facts__table--small thead tr th, .performance-facts__table--grid thead tr th,
+.performance-facts__table thead tr td,
+.performance-facts__table--small thead tr td,
+.performance-facts__table--grid thead tr td {
+  border: 0;
+}
+.performance-facts__table th, .performance-facts__table--small th, .performance-facts__table--grid th,
+.performance-facts__table td,
+.performance-facts__table--small td,
+.performance-facts__table--grid td {
+  font-weight: normal;
+  text-align: left;
+  padding: 0.25rem 0;
+  border-top: 1px solid black;
+  white-space: nowrap;
+}
+.performance-facts__table td:last-child, .performance-facts__table--small td:last-child, .performance-facts__table--grid td:last-child {
+  text-align: right;
+}
+.performance-facts__table .blank-cell, .performance-facts__table--small .blank-cell, .performance-facts__table--grid .blank-cell {
+  width: 1rem;
+  border-top: 0;
+}
+.performance-facts__table .thick-row th, .performance-facts__table--small .thick-row th, .performance-facts__table--grid .thick-row th,
+.performance-facts__table .thick-row td,
+.performance-facts__table--small .thick-row td,
+.performance-facts__table--grid .thick-row td {
+  border-top-width: 5px;
+}
+
+.small-info {
+  font-size: 0.7rem;
+}
+
+.performance-facts__table--small {
+  border-bottom: 1px solid #999;
+  margin: 0 0 0.5rem 0;
+}
+.performance-facts__table--small thead tr {
+  border-bottom: 1px solid black;
+}
+.performance-facts__table--small td:last-child {
+  text-align: left;
+}
+.performance-facts__table--small th,
+.performance-facts__table--small td {
+  border: 0;
+  padding: 0;
+}
+
+.performance-facts__table--grid {
+  margin: 0 0 0.5rem 0;
+}
+.performance-facts__table--grid td:last-child {
+  text-align: left;
+}
+.performance-facts__table--grid td:last-child::before {
+  content: "•";
+  font-weight: bold;
+  margin: 0 0.25rem 0 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.thick-end {
+  border-bottom: 10px solid black;
+}
+
+.thin-end {
+  border-bottom: 1px solid black;
+}

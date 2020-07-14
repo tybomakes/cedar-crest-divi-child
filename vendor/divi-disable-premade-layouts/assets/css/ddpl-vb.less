@@ -1,0 +1,20 @@
+/**********************************************************************************
+	Hide Tab and show iframe after loading
+**********************************************************************************/
+
+#et-fb-settings-column {
+	.et-fb-settings-tabs-nav {
+		li:first-child {
+			display: none!important;
+		}
+	}
+	iframe {
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity .4s ease-in-out;
+		&.show {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}
