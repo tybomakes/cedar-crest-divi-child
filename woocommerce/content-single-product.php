@@ -119,16 +119,16 @@ if ( post_password_required() ) {
 	</div>
 	<div class="size-section">
 		<div class="size-text">
-			<h2>Choose a Size</h2>
+			Choose a Size
 		</div>
 		<div class="svgbtns">
 			<div>
-				<a href="#3gal" class="size-activator active">
+				<a href="#3gal" class="size-activator">
 					<img src="https://placehold.it/150" />
 				</a>
 			</div>
 			<div>
-				<a href="#scround" class="size-activator">
+				<a href="#scround" class="size-activator active">
 					<img src="https://placehold.it/150" />
 				</a>
 			</div>
@@ -145,8 +145,20 @@ if ( post_password_required() ) {
 		</div>
 	</div>
 
+	<div class= "descriptors">
+		<div class="prod-desc">
+
+		</div>
+		<div class="activePic">
+
+		</div>
+		<div class="allergyIcons">
+
+		</div>
+	</div>
+
 	<div class="product-info">
-		<div>
+		<div class="nutritionalfactsall">
 			<section data-size="3gal" class="performance-facts">
 				<header class="performance-facts__header">
 					<h1 class="performance-facts__title">Nutrition Facts - 3Gal</h1>
