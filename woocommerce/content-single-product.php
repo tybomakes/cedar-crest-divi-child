@@ -97,7 +97,7 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
-
+test
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 	<div class="banner">
 		<div>
