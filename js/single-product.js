@@ -1,6 +1,7 @@
 (function($) {
   const $activators = $('.size-activator');
   const $facts = $('.performance-facts');
+  const $imgchange= $('.main-images');
 
   const handleSizeChange = function() {
     // remove active class from activators
@@ -18,6 +19,15 @@
         : $(this).addClass('hide');
     });
   };
+
+  const handleImageChange = function () {
+    $activators.on(addClass('active')), () => {
+      $(this).attr('data-img') === target
+      ? $(this).removeClass('hide')
+      : $(this).addClass('hide');
+  }
+  };
+  }
 
   $activators.on('click', handleSizeChange);
 

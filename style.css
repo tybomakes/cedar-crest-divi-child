@@ -28,12 +28,13 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
   .banner {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    background: #43abde;
-    padding: 120px 15px;
+    background: #48a3e0;
   }
   
   .banner-text {
     max-width: 450px;
+    justify-self: end;
+    align-self: center;
   }
   
   .size-section,
@@ -189,7 +190,7 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
     font-family: 'Roboto Slab'!important;
     text-transform: uppercase!important;
     font-size: 32px;
-    color: #449bf2;
+    color: #48a3e0;
     font-weight: 700;
   }
 
@@ -215,6 +216,36 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
   justify-self: center;
 }
 
-/* #Pint path{
-  fill:red;
-} */
+.woocommerce div.product .product_title {
+  font-size: 72px;
+  font-family: 'Roboto Slab'!important;
+  color: white;
+  text-shadow: 0.1em 0.1em 0.49em #00000060
+}
+
+
+
+.featureImg {
+  width: 100%;
+}
+
+.banner-img {
+  width: 50%;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+}
+.wmfo{
+  width: 100%;
+}
+
+.prod-flav {
+  font-size: 48px;
+}
+
+.prod-desc {
+  font-size: 23px;
+  font-family: 'Nunito',sans-serif;
+  line-height: 32px;
+  padding: 30px 30px 30px 0pc;
+}
