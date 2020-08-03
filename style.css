@@ -38,7 +38,7 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
   
   .size-section,
   .product-info {
-    margin: 60px 0;
+    margin: 30px 0;
   }
   
   .size-section {
@@ -61,11 +61,11 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
   
   /* NUTRITION LABELS */
   .size-activator {
-    opacity: .55;
-    padding: 10px;
+    
   }
-  .size-activator.active {
-    opacity: 1;
+    .size-activator.active #Bkgrnd , 
+    .size-activator.active #Text path {
+    fill: #ea994e
   } 
   
   .performance-facts {
@@ -177,8 +177,12 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
   }
   
   .svgbtns {
-    display: inline-flex;
-  }
+    display: flex;
+    width: 30%;
+    /* grid-template-columns: repeat(5,1fr); */
+    align-items: end;
+    align-items: flex-end;
+}
   
   .size-text {
     align-self: center;
@@ -192,3 +196,25 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
   table.cart th, #main-content table.cart th, table.cart td, #main-content table.cart td, table.cart tr, #main-content table.cart tr, #content-area table tr, #content-area table td, #content-area table th {
     padding: 0px;
 }
+
+.gallon, .scround {
+  width: 100%;
+  justify-self: center;
+}
+
+.quart {
+  width: 68%;
+  justify-self: center;
+}
+.pint {
+  width: 66%;
+  justify-self: center;
+}
+.cup {
+  width: 56%;
+  justify-self: center;
+}
+
+/* #Pint path{
+  fill:red;
+} */
