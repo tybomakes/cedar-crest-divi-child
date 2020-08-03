@@ -183,12 +183,12 @@ if ( post_password_required() ) {
 
 				// Load field settings and values.
 				$allergyIcons = get_field_object('allergy_icons');
-				$selectedIcons = $allergyIcons['choices'];
+				$selectedIcons = $allergyIcons['value'];
 
 				// Display labels.
 				if( $selectedIcons ): ?>
 					<?php foreach( $selectedIcons as $key => $value ): ?>
-						<img src="<?php echo get_stylesheet_directory_uri();?>/images/<?php echo $key;?>.png" alt="<?php echo $value;?>"/> 
+						<img src="<?php echo get_stylesheet_directory_uri();?>/images/<?php echo $value;?>.png" alt="<?php echo $value;?>"/> 
 					<?php endforeach; ?>
 				<?php endif; ?>
 
@@ -612,7 +612,7 @@ if ( post_password_required() ) {
 				</p>
 
 			</section>
-			<section data-size="quart" class="performance-facts">
+			<section data-size="quart" class="performance-facts hide">
 				<header class="performance-facts__header">
 					<h1 class="performance-facts__title">Nutrition Facts - quart</h1>
 					<p>Serving Size 1/2 cup (about 82g)
@@ -1238,8 +1238,12 @@ if ( post_password_required() ) {
 			<h3>Ingredients</h3>
 			<p><?php the_field('ingredients'); ?></p>
 			<h3>Allergy Information</h3>
-			<p>Contains: <?php the_field('allergens'); ?></p>
+			<p>Contains: <?php the_field('allergens'); ?></p><br />
 			<small>Note: Nutritional properties of products intended for sale in high altitude areas may vary due to specific manufacturing practices used to maintain product quality. Please refer to the nutrition facts panel on package for current details.</small>
+			<div class ="findContainer" >
+				<div class="findUs">Find Cedar Crest near you!</div>
+				<div class="sim-btn-group product-find"><a href="https://cedarcrestsite.wpengine.com/stores">STORES</a><a href="https://cedarcrestsite.wpengine.com/parlor-locator/">PARLORS</a>
+			</div>
 		</div>
 	<div>
 

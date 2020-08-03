@@ -243,6 +243,7 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
   font-size: 48px;
   display: grid;
   align-self: center;
+  line-height: 36px;
 }
 
 .prod-desc {
@@ -253,7 +254,7 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
 }
 
 .main-images {
-  width: 100%;
+  width: 75%;
   align-self: center;
   justify-self: center;
 }
@@ -268,4 +269,41 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-self: center;
+  grid-gap: 30px;
+}
+
+.product-images {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+.woocommerce-breadcrumb {
+  display: none;
+}
+
+/* body:not(.et-tb) #main-content .container, body:not(.et-tb-has-header) #main-content .container {
+  padding-top: 30px;
+} */
+
+.et_pb_fullwidth_menu--with-logo .et_pb_row::before {
+  width: 104.5%!important;
+  margin-left: -2.25%!important;
+}
+.findUs {
+  font-size: 26px;
+  color: #469fde;
+  font-family: 'Roboto Slab'!important;
+}
+.findContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.ingredients h3 {
+  font-size: 28px;
+}
+.ingredients p {
+  font-size: 16px;
 }
