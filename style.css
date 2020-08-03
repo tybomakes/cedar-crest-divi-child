@@ -77,7 +77,7 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
     padding: 0.5rem;
   }
   
-  .performance-facts.hide {
+  .hide {
     display: none;
   }
   
@@ -241,6 +241,8 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
 
 .prod-flav {
   font-size: 48px;
+  display: grid;
+  align-self: center;
 }
 
 .prod-desc {
@@ -248,4 +250,22 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
   font-family: 'Nunito',sans-serif;
   line-height: 32px;
   padding: 30px 30px 30px 0pc;
+}
+
+.main-images {
+  width: 100%;
+  align-self: center;
+  justify-self: center;
+}
+
+.descriptors {
+  display: grid;
+  grid-template-columns: 2fr 4fr 2fr;
+  margin: 30px;
+}
+
+.allergyIcons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-self: center;
 }

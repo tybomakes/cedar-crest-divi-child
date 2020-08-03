@@ -149,28 +149,56 @@ if ( post_password_required() ) {
 		</div>
 	</div>
 
-	<?php $gallon =  get_field ('gallon_image'); ?>
-	<?php $scround =  get_field ('scround_image'); ?>
-	<?php $quart =  get_field ('quart_image'); ?>
-	<?php $pint =  get_field ('pint_image'); ?>
-	<?php $cup =  get_field ('cup_image'); ?>
+	<?php $gallonImg =  get_field ('gallon_image'); ?>
+	<?php $scroundImg =  get_field ('scround_image'); ?>
+	<?php $quartImg =  get_field ('quart_image'); ?>
+	<?php $pintImg =  get_field ('pint_image'); ?>
+	<?php $cupImg =  get_field ('cup_image'); ?>
 	<div class= "descriptors">
 		<div class="prod-flav">
-		<?php echo($flavor)?>
+		<?php the_title();?>
 		<p class="prod-desc"><?php echo($description)?></p>
 		</div>
-		<div data-img="3gal" class="main-images">
-		<img src="<?php echo($gallon)?>" class="gallonImg" />
-		<?php echo($gallon)?>
+	<div class="product-images">
+		<div data-size="3gal" class="main-images hide">
+			<img src="<?php echo($gallonImg);?>" class="gallonImg" />
 		</div>
+		<div data-size="scround" class="main-images ">
+			<img src="<?php echo($scroundImg);?>" class="gallonImg" />
+		</div>
+		<div data-size="quart" class="main-images hide">
+			<img src="<?php echo($quartImg);?>" class="gallonImg" />
+		</div>
+		<div data-size="pint" class="main-images hide">
+			<img src="<?php echo($pintImg);?>" class="gallonImg" />
+		</div>
+		<div data-size="cup" class="main-images hide">
+			<img src="<?php echo($cupImg);?>" class="gallonImg" />
+		</div>
+	</div>
 		<div class="allergyIcons">
+				
+
+				<?php
+
+				// Load field settings and values.
+				$allergyIcons = get_field_object('allergy_icons');
+				$selectedIcons = $allergyIcons['choices'];
+
+				// Display labels.
+				if( $selectedIcons ): ?>
+					<?php foreach( $selectedIcons as $key => $value ): ?>
+						<img src="<?php echo get_stylesheet_directory_uri();?>/images/<?php echo $key;?>.png" alt="<?php echo $value;?>"/> 
+					<?php endforeach; ?>
+				<?php endif; ?>
+
 
 		</div>
 	</div>
 
 	<div class="product-info">
 		<div class="nutritionalfactsall">
-			<section data-size="3gal" class="performance-facts">
+			<section data-size="3gal" class="performance-facts hide">
 				<header class="performance-facts__header">
 					<h1 class="performance-facts__title">Nutrition Facts - 3Gal</h1>
 					<p>Serving Size 1/2 cup (about 82g)
@@ -377,7 +405,7 @@ if ( post_password_required() ) {
 				</p>
 
 			</section>
-			<section data-size="scround" class="performance-facts hide">
+			<section data-size="scround" class="performance-facts">
 				<header class="performance-facts__header">
 					<h1 class="performance-facts__title">Nutrition Facts - scround</h1>
 					<p>Serving Size 1/2 cup (about 82g)
