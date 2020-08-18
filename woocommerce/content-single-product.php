@@ -101,11 +101,12 @@ if ( post_password_required() ) {
 <?php $flavor =  get_field ('flavor'); ?>
 <?php $size =  get_field ('size'); ?>
 <?php $description =  get_field ('product_description'); ?>
+<?php $productImgs =  get_field ('product_images'); ?>
 
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 	<div class="banner">
 		<div>
-		<div class="featureImg"><img src="<?php echo($featuredImage)?>"/></div>
+			<div class="featureImg"><img src="<?php echo($productImgs['featured_image']);?>"/></div>
 		</div>
 		<div class="banner-text">
 			<?php 
@@ -148,7 +149,7 @@ if ( post_password_required() ) {
 			</div>
 		</div>
 	</div>
-
+	
 	<?php $gallonImg =  get_field ('gallon_image'); ?>
 	<?php $scroundImg =  get_field ('scround_image'); ?>
 	<?php $quartImg =  get_field ('quart_image'); ?>
@@ -156,27 +157,27 @@ if ( post_password_required() ) {
 	<?php $cupImg =  get_field ('cup_image'); ?>
 	<div class= "descriptors">
 		<div class="prod-flav">
-		<?php the_title();?>
-		<p class="prod-desc"><?php echo($description)?></p>
+			<?php the_title();?>
+			<p class="prod-desc"><?php echo($description)?></p>
 		</div>
 	<div class="product-images">
 		<div data-size="3gal" class="main-images hide">
-			<img src="<?php echo($gallonImg);?>" class="gallonImg" />
+			<img src="<?php echo($productImgs['gallon_image']);?>" class="gallonImg" />
 		</div>
 		<div data-size="scround" class="main-images ">
-			<img src="<?php echo($scroundImg);?>" class="gallonImg" />
+		<img src="<?php echo($productImgs['scround_image']);?>" class="scroundImg" />
 		</div>
 		<div data-size="quart" class="main-images hide">
-			<img src="<?php echo($quartImg);?>" class="gallonImg" />
+		<img src="<?php echo($productImgs['quart_image']);?>" class="quartImg" />
 		</div>
 		<div data-size="pint" class="main-images hide">
-			<img src="<?php echo($pintImg);?>" class="gallonImg" />
+		<img src="<?php echo($productImgs['pint_image']);?>" class="pintImg" />
 		</div>
 		<div data-size="cup" class="main-images hide">
-			<img src="<?php echo($cupImg);?>" class="gallonImg" />
-		</div>
+		<img src="<?php echo($productImgs['cup_image']);?>" class="cupImg" />
 	</div>
-		<div class="allergyIcons">
+	</div>
+	<div class="allergyIcons">
 				
 
 				<?php
@@ -1234,6 +1235,7 @@ if ( post_password_required() ) {
 
 			</section>
 		</div>
+		
 		<div class="ingredients">
 			<h3>Ingredients</h3>
 			<p><?php the_field('ingredients'); ?></p>
@@ -1245,8 +1247,7 @@ if ( post_password_required() ) {
 				<div class="sim-btn-group product-find"><a href="https://cedarcrestsite.wpengine.com/stores">STORES</a><a href="https://cedarcrestsite.wpengine.com/parlor-locator/">PARLORS</a>
 			</div>
 		</div>
-	<div>
-
+	</div>
 </div>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>

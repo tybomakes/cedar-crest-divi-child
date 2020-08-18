@@ -13,6 +13,10 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
   * Custom Woocommerce stuff
   */
 
+  body {
+    background-color: #a3a3a3;
+  }
+
   .single-product .et_pb_gutters2 .et_pb_column_2_3 > .et_pb_row_inner > .et_pb_column_1_3,
   .single-product .et_pb_gutters2 .et_pb_column_2_3 > .et_pb_row_inner > .et_pb_column_1_3 {
     width: 47.716%;
@@ -254,7 +258,7 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
 }
 
 .main-images {
-  width: 75%;
+  width: 68%;
   align-self: center;
   justify-self: center;
 }
