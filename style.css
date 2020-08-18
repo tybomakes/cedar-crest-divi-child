@@ -41,7 +41,7 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
     align-self: center;
   }
   
-  .size-section,
+
   .product-info {
     margin: 30px 0;
   }
@@ -310,4 +310,14 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
 }
 .ingredients p {
   font-size: 16px;
+}
+
+/* Temp Fixing product template gutter issue */
+
+.product-template-default .et_pb_gutters1 .et_pb_column_2_3, .et_pb_gutters1.et_pb_row .et_pb_column_2_3 {
+    width: 60.667%!important;
+}
+
+.product-template-default .et_pb_gutters2 .et_pb_column, .et_pb_gutters2.et_pb_row .et_pb_column {
+  margin-right: -0.5%!important;
 }

@@ -202,8 +202,8 @@ if ( post_password_required() ) {
 			<section data-size="3gal" class="performance-facts hide">
 				<header class="performance-facts__header">
 					<h1 class="performance-facts__title">Nutrition Facts - 3Gal</h1>
-					<p>Serving Size 1/2 cup (about 82g)
-						<p>Serving Per Container 8</p>
+					<p>Serving Size <?php echo($serving_size);?> (about 82g)<p>
+						<p>Serving Per Container <?php echo($servings_per_container);?></p>
 				</header>
 				<table class="performance-facts__table">
 					<thead>
@@ -217,7 +217,7 @@ if ( post_password_required() ) {
 						<tr>
 							<th colspan="2">
 								<b>Calories</b>
-								200
+								<?php echo($calories_per_serving);?>
 							</th>
 							<td>
 								Calories from Fat
