@@ -33,6 +33,8 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     background: #48a3e0;
+    align-items: center;
+    justify-items: center;
   }
   
   .banner-text {
@@ -43,7 +45,8 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
   
 
   .product-info {
-    margin: 30px 0;
+    padding-bottom: 60px;
+    padding-top: 30px;
   }
   
   .size-section {
@@ -227,27 +230,27 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
   text-shadow: 0.1em 0.1em 0.49em #00000060
 }
 
-
-
 .featureImg {
   width: 100%;
+  height: 400px;
+  display: grid;
 }
 
-.banner-img {
-  width: 50%;
-  display: flex;
-  align-self: center;
-  justify-self: center;
+
+.wmcontainer {
+  display: contents !important;
 }
+
 .wmfo{
-  width: 100%;
+  width: 57%;
 }
 
 .prod-flav {
-  font-size: 48px;
-  display: grid;
-  align-self: center;
-  line-height: 36px;
+  font-size: 72px;
+  font-family: 'Roboto Slab'!important;
+  color: white;
+  text-shadow: 0.1em 0.1em 0.49em #00000060;
+
 }
 
 .prod-desc {
@@ -255,6 +258,8 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
   font-family: 'Nunito',sans-serif;
   line-height: 32px;
   padding: 30px 30px 30px 0pc;
+  display: grid;
+  justify-items: flex-end;
 }
 
 .main-images {
@@ -264,16 +269,19 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
 }
 
 .descriptors {
-  display: grid;
-  grid-template-columns: 2fr 4fr 2fr;
   margin: 30px;
+  line-height: 62px;
+  display: grid;
+  align-content: center;
 }
 
 .allergyIcons {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   align-self: center;
-  grid-gap: 30px;
+  grid-gap: 50px;
+  margin-top: 30px;
+  width: 65%;
 }
 
 .product-images {
