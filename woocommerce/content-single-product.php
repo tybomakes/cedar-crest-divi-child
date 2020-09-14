@@ -20,12 +20,25 @@ defined( 'ABSPATH' ) || exit;
 global $product;
 $short_description = apply_filters( 'woocommerce_short_description', $post->post_excerpt );
 
-$three_gallon = get_field('three_gallon');
-if($three_gallon){
-	var_dump($three_gallon);
-}
 
-var_dump(the_field('scround'));
+if( have_rows('three_gallon') ):
+
+    // Loop through rows.
+    while( have_rows('three_gallon') ) : the_row();
+
+        // Load sub field value.
+        $sub_value = get_sub_field('allergens');
+        // Do something...
+		var_dump($sub_value);
+    // End loop.
+    endwhile;
+
+// No value.
+else :
+    // Do something...
+endif;
+
+
 
 
 // generate ACF variables
