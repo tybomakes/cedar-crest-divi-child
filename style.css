@@ -13,162 +13,311 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
   * Custom Woocommerce stuff
   */
 
-.single-product .et_pb_gutters2 .et_pb_column_2_3 > .et_pb_row_inner > .et_pb_column_1_3,
-.single-product .et_pb_gutters2 .et_pb_column_2_3 > .et_pb_row_inner > .et_pb_column_1_3 {
-  width: 47.716%;
-}
-
-@media (min-width: 981px) {
-  .et_pb_gutters2 .et_pb_column {
-    margin-right: 0 !important;
+  body {
+    background-color: #a3a3a3;
   }
+
+  .single-product .et_pb_gutters2 .et_pb_column_2_3 > .et_pb_row_inner > .et_pb_column_1_3,
+  .single-product .et_pb_gutters2 .et_pb_column_2_3 > .et_pb_row_inner > .et_pb_column_1_3 {
+    width: 47.716%;
+  }
+  
+  @media (min-width: 981px) {
+    .et_pb_gutters2 .et_pb_column {
+      margin-right: 0 !important;
+    }
+  }
+  
+  
+  .banner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: #48a3e0;
+  }
+  
+  .banner-text {
+    max-width: 450px;
+    justify-self: end;
+    align-self: center;
+  }
+  
+
+  .product-info {
+    margin: 30px 0;
+  }
+  
+  .size-section {
+    display: flex;
+    justify-content: center;
+    background-color: #acd6f1;
+   
+  }
+  
+  .size-section > * {
+    margin: 12px 30px;
+  }
+  
+  .product-info {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+  
+  
+  
+  /* NUTRITION LABELS */
+  .size-activator {
+    
+  }
+    .size-activator.active #Bkgrnd , 
+    .size-activator.active #Text path {
+    fill: #ea994e
+  } 
+  
+  .performance-facts {
+    border: 1px solid black;
+    margin-right:40px;
+    float: left;
+    width: 90%;
+    padding: 0.5rem;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  .performance-facts table {
+    border-collapse: collapse;
+  }
+  
+  .performance-facts__title {
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 0 0 0.25rem 0;
+  }
+  
+  .performance-facts__header {
+    border-bottom: 10px solid black;
+    padding: 0 0 0.25rem 0;
+    margin: 0 0 0.5rem 0;
+  }
+  .performance-facts__header p {
+    margin: 0;
+  }
+  
+  .performance-facts__table, .performance-facts__table--small, .performance-facts__table--grid {
+    width: 100%;
+  }
+  .performance-facts__table thead tr th, .performance-facts__table--small thead tr th, .performance-facts__table--grid thead tr th,
+  .performance-facts__table thead tr td,
+  .performance-facts__table--small thead tr td,
+  .performance-facts__table--grid thead tr td {
+    border: 0;
+  }
+  .performance-facts__table th, .performance-facts__table--small th, .performance-facts__table--grid th,
+  .performance-facts__table td,
+  .performance-facts__table--small td,
+  .performance-facts__table--grid td {
+    font-weight: normal;
+    text-align: left;
+    padding: 0.25rem 0;
+    border-top: 1px solid black;
+    white-space: nowrap;
+  }
+  .performance-facts__table td:last-child, .performance-facts__table--small td:last-child, .performance-facts__table--grid td:last-child {
+    text-align: right;
+  }
+  .performance-facts__table .blank-cell, .performance-facts__table--small .blank-cell, .performance-facts__table--grid .blank-cell {
+    width: 1rem;
+    border-top: 0;
+  }
+  .performance-facts__table .thick-row th, .performance-facts__table--small .thick-row th, .performance-facts__table--grid .thick-row th,
+  .performance-facts__table .thick-row td,
+  .performance-facts__table--small .thick-row td,
+  .performance-facts__table--grid .thick-row td {
+    border-top-width: 5px;
+  }
+  
+  .small-info {
+    font-size: 0.7rem;
+  }
+  
+  .performance-facts__table--small {
+    border-bottom: 1px solid #999;
+    margin: 0 0 0.5rem 0;
+  }
+  .performance-facts__table--small thead tr {
+    border-bottom: 1px solid black;
+  }
+  .performance-facts__table--small td:last-child {
+    text-align: left;
+  }
+  .performance-facts__table--small th,
+  .performance-facts__table--small td {
+    border: 0;
+    padding: 0;
+  }
+  
+  .performance-facts__table--grid {
+    margin: 0 0 0.5rem 0;
+  }
+  .performance-facts__table--grid td:last-child {
+    text-align: left;
+  }
+  .performance-facts__table--grid td:last-child::before {
+    content: "•";
+    font-weight: bold;
+    margin: 0 0.25rem 0 0;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .thick-end {
+    border-bottom: 10px solid black;
+  }
+  
+  .thin-end {
+    border-bottom: 1px solid black;
+  }
+  
+  .svgbtns {
+    display: flex;
+    width: 30%;
+    /* grid-template-columns: repeat(5,1fr); */
+    align-items: end;
+    align-items: flex-end;
+}
+  
+  .size-text {
+    align-self: center;
+    font-family: 'Roboto Slab'!important;
+    text-transform: uppercase!important;
+    font-size: 32px;
+    color: #48a3e0;
+    font-weight: 700;
+  }
+
+  table.cart th, #main-content table.cart th, table.cart td, #main-content table.cart td, table.cart tr, #main-content table.cart tr, #content-area table tr, #content-area table td, #content-area table th {
+    padding: 0px;
+}
+
+.gallon, .scround {
+  width: 100%;
+  justify-self: center;
+}
+
+.quart {
+  width: 68%;
+  justify-self: center;
+}
+.pint {
+  width: 66%;
+  justify-self: center;
+}
+.cup {
+  width: 56%;
+  justify-self: center;
+}
+
+.woocommerce div.product .product_title {
+  font-size: 72px;
+  font-family: 'Roboto Slab'!important;
+  color: white;
+  text-shadow: 0.1em 0.1em 0.49em #00000060
 }
 
 
-.banner {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  background: #43abde;
-  padding: 120px 15px;
+
+.featureImg {
+  width: 100%;
 }
 
-.banner-text {
-  max-width: 450px;
-}
-
-.size-tabs,
-.product-info {
-  margin: 60px 0;
-}
-
-.size-tabs {
+.banner-img {
+  width: 50%;
   display: flex;
+  align-self: center;
+  justify-self: center;
+}
+.wmfo{
+  width: 100%;
+}
+
+.prod-flav {
+  font-size: 48px;
+  display: grid;
+  align-self: center;
+  line-height: 36px;
+}
+
+.prod-desc {
+  font-size: 23px;
+  font-family: 'Nunito',sans-serif;
+  line-height: 32px;
+  padding: 30px 30px 30px 0pc;
+}
+
+.main-images {
+  width: 68%;
+  align-self: center;
+  justify-self: center;
+}
+
+.descriptors {
+  display: grid;
+  grid-template-columns: 2fr 4fr 2fr;
+  margin: 30px;
+}
+
+.allergyIcons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-self: center;
+  grid-gap: 30px;
+}
+
+.product-images {
+  display: grid;
+  align-content: center;
   justify-content: center;
 }
 
-.size-tabs > * {
-  margin: 12px 30px;
-}
-
-.product-info {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-}
-
-
-
-/* NUTRITION LABELS */
-.size-activator {
-  opacity: .55;
-}
-.size-activator.active {
-  opacity: 1;
-} 
-
-.performance-facts {
-  border: 1px solid black;
-  margin: 20px;
-  float: left;
-  width: 90%;
-  padding: 0.5rem;
-}
-
-.performance-facts.hide {
+.woocommerce-breadcrumb {
   display: none;
 }
 
-.performance-facts table {
-  border-collapse: collapse;
+/* body:not(.et-tb) #main-content .container, body:not(.et-tb-has-header) #main-content .container {
+  padding-top: 30px;
+} */
+
+.et_pb_fullwidth_menu--with-logo .et_pb_row::before {
+  width: 104.5%!important;
+  margin-left: -2.25%!important;
+}
+.findUs {
+  font-size: 26px;
+  color: #469fde;
+  font-family: 'Roboto Slab'!important;
+}
+.findContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
 }
 
-.performance-facts__title {
-  font-weight: bold;
-  font-size: 2rem;
-  margin: 0 0 0.25rem 0;
+.ingredients h3 {
+  font-size: 28px;
+}
+.ingredients p {
+  font-size: 16px;
 }
 
-.performance-facts__header {
-  border-bottom: 10px solid black;
-  padding: 0 0 0.25rem 0;
-  margin: 0 0 0.5rem 0;
-}
-.performance-facts__header p {
-  margin: 0;
+/* Temp Fixing product template gutter issue */
+
+.product-template-default .et_pb_gutters1 .et_pb_column_2_3, .et_pb_gutters1.et_pb_row .et_pb_column_2_3 {
+    width: 60.667%!important;
 }
 
-.performance-facts__table, .performance-facts__table--small, .performance-facts__table--grid {
-  width: 100%;
-}
-.performance-facts__table thead tr th, .performance-facts__table--small thead tr th, .performance-facts__table--grid thead tr th,
-.performance-facts__table thead tr td,
-.performance-facts__table--small thead tr td,
-.performance-facts__table--grid thead tr td {
-  border: 0;
-}
-.performance-facts__table th, .performance-facts__table--small th, .performance-facts__table--grid th,
-.performance-facts__table td,
-.performance-facts__table--small td,
-.performance-facts__table--grid td {
-  font-weight: normal;
-  text-align: left;
-  padding: 0.25rem 0;
-  border-top: 1px solid black;
-  white-space: nowrap;
-}
-.performance-facts__table td:last-child, .performance-facts__table--small td:last-child, .performance-facts__table--grid td:last-child {
-  text-align: right;
-}
-.performance-facts__table .blank-cell, .performance-facts__table--small .blank-cell, .performance-facts__table--grid .blank-cell {
-  width: 1rem;
-  border-top: 0;
-}
-.performance-facts__table .thick-row th, .performance-facts__table--small .thick-row th, .performance-facts__table--grid .thick-row th,
-.performance-facts__table .thick-row td,
-.performance-facts__table--small .thick-row td,
-.performance-facts__table--grid .thick-row td {
-  border-top-width: 5px;
-}
-
-.small-info {
-  font-size: 0.7rem;
-}
-
-.performance-facts__table--small {
-  border-bottom: 1px solid #999;
-  margin: 0 0 0.5rem 0;
-}
-.performance-facts__table--small thead tr {
-  border-bottom: 1px solid black;
-}
-.performance-facts__table--small td:last-child {
-  text-align: left;
-}
-.performance-facts__table--small th,
-.performance-facts__table--small td {
-  border: 0;
-  padding: 0;
-}
-
-.performance-facts__table--grid {
-  margin: 0 0 0.5rem 0;
-}
-.performance-facts__table--grid td:last-child {
-  text-align: left;
-}
-.performance-facts__table--grid td:last-child::before {
-  content: "•";
-  font-weight: bold;
-  margin: 0 0.25rem 0 0;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.thick-end {
-  border-bottom: 10px solid black;
-}
-
-.thin-end {
-  border-bottom: 1px solid black;
+.product-template-default .et_pb_gutters2 .et_pb_column, .et_pb_gutters2.et_pb_row .et_pb_column {
+  margin-right: -0.5%!important;
 }

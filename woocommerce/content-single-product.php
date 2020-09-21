@@ -20,6 +20,31 @@ defined( 'ABSPATH' ) || exit;
 global $product;
 $short_description = apply_filters( 'woocommerce_short_description', $post->post_excerpt );
 
+$sizes = get_field('sizes');
+// var_dump($sizes);
+
+// var_dump( ccff_find_size('pint') );
+
+if( have_rows('three_gallon') ):
+
+    // Loop through rows.
+    while( have_rows('three_gallon') ) : the_row();
+
+        // Load sub field value.
+        $sub_value = get_sub_field('allergens');
+        // Do something...
+		var_dump($sub_value);
+    // End loop.
+    endwhile;
+
+// No value.
+else :
+    // Do something...
+endif;
+
+
+
+
 // generate ACF variables
 $acfFields = [
 	"ingredients",
@@ -27,7 +52,7 @@ $acfFields = [
 	"product_description",
 	"ingredients",
 	"allergens",
-	"servings_per_containter",
+	"servings_per_container",
 	"serving_size",
 	"calories_per_serving",
 	"calories_per_pint",
@@ -97,52 +122,225 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
+<?php $featuredImage =  get_field ('featured_image'); ?>
+<?php $flavor =  get_field ('flavor'); ?>
+<?php $size =  get_field ('size'); ?>
+<?php $description =  get_field ('product_description'); ?>
+<?php $productImgs =  get_field ('product_images'); ?>
 
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 	<div class="banner">
 		<div>
-			<?php if ( has_post_thumbnail( $product->id ) ) {
-				$attachment_ids[0] = get_post_thumbnail_id( $product->id );
-				$attachment = wp_get_attachment_image_src($attachment_ids[0], 'full' ); ?>    
-				<img src="<?php echo $attachment[0] ; ?>" class="product-image" />
-			<?php } ?>
-		</div>
-		<div class="banner-text">
-			<?php 
-				the_title( '<h1 class="product_title entry-title">', '</h1>' );
-				echo $short_description;
-			?>
-		</div>
-		<div>
-			WISC LOGO
-		</div>
-	</div>
-	<div class="size-tabs">
-		<div>
-			<h2>Find <?php echo get_the_title(); ?> near you.</h2>
-			<p>Available in pints and tubs.</p>
-		</div>
-		<div>
-			<a href="#tub" class="size-activator active">
-				<img src="https://placehold.it/250" />
-			</a>
-		</div>
-		<div>
-			<a href="#pint" class="size-activator">
-				<img src="https://placehold.it/250" />
-			</a>
-		</div>
-		<div>
-			<a href="#cup" class="size-activator">
-				<img src="https://placehold.it/250" />
-			</a>
+			<div class="featureImg">
+				<?php $gallonImg =  get_field ('gallon_image'); ?>
+				<?php $scroundImg =  get_field ('scround_image'); ?>
+				<?php $quartImg =  get_field ('quart_image'); ?>
+				<?php $pintImg =  get_field ('pint_image'); ?>
+				<?php $cupImg =  get_field ('cup_image'); ?>
+				<?php $cupdesc =  get_field ('cup_desc'); ?>
+				<div class="product-images">
+					<div data-size="3gal" class="main-images hide">
+						<img src="<?php echo($productImgs['gallon_image']);?>" class="gallonImg" />
+					</div>
+					<div data-size="scround" class="main-images ">
+					<img src="<?php echo($productImgs['scround_image']);?>" class="scroundImg" />
+					</div>
+					<div data-size="quart" class="main-images hide">
+					<img src="<?php echo($productImgs['quart_image']);?>" class="quartImg" />
+					</div>
+					<div data-size="pint" class="main-images hide">
+					<img src="<?php echo($productImgs['pint_image']);?>" class="pintImg" />
+					</div>
+					<div data-size="cup" class="main-images hide">
+					<img src="<?php echo($productImgs['cup_image']);?>" class="cupImg" />
+				</div>
+			</div>
+
 		</div>
 	</div>
+				<div class= "descriptors">
+					<div class="prod-flav">
+						<?php the_title();?>
+						<p class="prod-desc">
+						<?php if ($cupdesc) { ?>
+							<?php echo($cupdesc); ?></p>
+						<?php } else { ?>
+						<?php echo($description);?>
+						<?php } ?>
+					</div>
+				</div>
+				<div class="wmcontainer">
+					<img src="https://cedar-crest.local/wp-content/uploads/2020/07/wmfo-1.png"class="wmfo"/>
+				</div>
+	</div>
+		<div class="size-section">
+			<div class="size-text">
+				Choose a Size
+			</div>
+			<div class="svgbtns">
+				<?php foreach($sizes as $size) {
+					if (!$size['size']) continue;
+					echo '<div class="'.$size['size'].'">';
+						include get_stylesheet_directory() .'/includes/size_activator_' . $size['size'] . '.php';					
+					echo '</div>';
+				} ?>
+			</div>
+		</div>
+	</div>
+
 	<div class="product-info">
-		<div>
-			<section data-size="tub" class="performance-facts">
+		<div class="nutritionalfactsall">
+			<section data-size="3gal" class="performance-facts hide">
 				<header class="performance-facts__header">
-					<h1 class="performance-facts__title">Nutrition Facts - TUB</h1>
+					<h1 class="performance-facts__title">Nutrition Facts - 3Gal</h1>
+					<p>Serving Size <?php echo($serving_size);?> (about 82g)<p>
+						<p>Serving Per Container <?php echo($servings_per_container);?></p>
+				</header>
+				<table class="performance-facts__table">
+					<thead>
+						<tr>
+							<th colspan="3" class="small-info">
+								Amount Per Serving
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th colspan="2">
+								<b>Calories</b>
+								<?php echo($calories_per_serving);?>
+							</th>
+							<td>
+								Calories from Fat
+								130
+							</td>
+						</tr>
+						<tr class="thick-row">
+							<td colspan="3" class="small-info">
+								<b>% Daily Value*</b>
+							</td>
+						</tr>
+						<tr>
+							<th colspan="2">
+								<b>Total Fat</b>
+								14g
+							</th>
+							<td>
+								<b>22%</b>
+							</td>
+						</tr>
+						<tr>
+							<td class="blank-cell">
+							</td>
+							<th>
+								Saturated Fat
+								9g
+							</th>
+							<td>
+								<b>22%</b>
+							</td>
+						</tr>
+						<tr>
+							<td class="blank-cell">
+							</td>
+							<th>
+								Trans Fat
+								0g
+							</th>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<th colspan="2">
+								<b>Cholesterol</b>
+								55mg
+							</th>
+							<td>
+								<b>18%</b>
+							</td>
+						</tr>
+						<tr>
+							<th colspan="2">
+								<b>Sodium</b>
+								40mg
+							</th>
+							<td>
+								<b>2%</b>
+							</td>
+						</tr>
+						<tr>
+							<th colspan="2">
+								<b>Total Carbohydrate</b>
+								17g
+							</th>
+							<td>
+								<b>6%</b>
+							</td>
+						</tr>
+						<tr>
+							<td class="blank-cell">
+							</td>
+							<th>
+								Dietary Fiber
+								1g
+							</th>
+							<td>
+								<b>4%</b>
+							</td>
+						</tr>
+						<tr>
+							<td class="blank-cell">
+							</td>
+							<th>
+								Sugars
+								14g
+							</th>
+							<td>
+							</td>
+						</tr>
+						<tr class="thick-end">
+							<th colspan="2">
+								<b>Protein</b>
+								3g
+							</th>
+							<td>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table class="performance-facts__table--grid">
+					<tbody>
+						<tr>
+							<td colspan="2">
+								Vitamin A
+								10%
+							</td>
+							<td>
+								Vitamin C
+								0%
+							</td>
+						</tr>
+						<tr class="thin-end">
+							<td colspan="2">
+								Calcium
+								10%
+							</td>
+							<td>
+								Iron
+								6%
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<p class="small-info">* Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or lower depending on your calorie needs:</p>
+
+
+			</section>
+			<section data-size="scround" class="performance-facts">
+				<header class="performance-facts__header">
+					<h1 class="performance-facts__title">Nutrition Facts - scround</h1>
 					<p>Serving Size 1/2 cup (about 82g)
 						<p>Serving Per Container 8</p>
 				</header>
@@ -286,70 +484,159 @@ if ( post_password_required() ) {
 
 				<p class="small-info">* Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or lower depending on your calorie needs:</p>
 
-				<table class="performance-facts__table--small small-info">
+
+			</section>
+			<section data-size="quart" class="performance-facts hide">
+				<header class="performance-facts__header">
+					<h1 class="performance-facts__title">Nutrition Facts - quart</h1>
+					<p>Serving Size 1/2 cup (about 82g)
+						<p>Serving Per Container 8</p>
+				</header>
+				<table class="performance-facts__table">
 					<thead>
 						<tr>
-							<td colspan="2"></td>
-							<th>Calories:</th>
-							<th>2,000</th>
-							<th>2,500</th>
+							<th colspan="3" class="small-info">
+								Amount Per Serving
+							</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<th colspan="2">Total Fat</th>
-							<td>Less than</td>
-							<td>65g</td>
-							<td>80g</td>
+							<th colspan="2">
+								<b>Calories</b>
+								200
+							</th>
+							<td>
+								Calories from Fat
+								130
+							</td>
+						</tr>
+						<tr class="thick-row">
+							<td colspan="3" class="small-info">
+								<b>% Daily Value*</b>
+							</td>
 						</tr>
 						<tr>
-							<td class="blank-cell"></td>
-							<th>Saturated Fat</th>
-							<td>Less than</td>
-							<td>20g</td>
-							<td>25g</td>
+							<th colspan="2">
+								<b>Total Fat</b>
+								14g
+							</th>
+							<td>
+								<b>22%</b>
+							</td>
 						</tr>
 						<tr>
-							<th colspan="2">Cholesterol</th>
-							<td>Less than</td>
-							<td>300mg</td>
-							<td>300 mg</td>
+							<td class="blank-cell">
+							</td>
+							<th>
+								Saturated Fat
+								9g
+							</th>
+							<td>
+								<b>22%</b>
+							</td>
 						</tr>
 						<tr>
-							<th colspan="2">Sodium</th>
-							<td>Less than</td>
-							<td>2,400mg</td>
-							<td>2,400mg</td>
+							<td class="blank-cell">
+							</td>
+							<th>
+								Trans Fat
+								0g
+							</th>
+							<td>
+							</td>
 						</tr>
 						<tr>
-							<th colspan="3">Total Carbohydrate</th>
-							<td>300g</td>
-							<td>375g</td>
+							<th colspan="2">
+								<b>Cholesterol</b>
+								55mg
+							</th>
+							<td>
+								<b>18%</b>
+							</td>
 						</tr>
 						<tr>
-							<td class="blank-cell"></td>
-							<th colspan="2">Dietary Fiber</th>
-							<td>25g</td>
-							<td>30g</td>
+							<th colspan="2">
+								<b>Sodium</b>
+								40mg
+							</th>
+							<td>
+								<b>2%</b>
+							</td>
+						</tr>
+						<tr>
+							<th colspan="2">
+								<b>Total Carbohydrate</b>
+								17g
+							</th>
+							<td>
+								<b>6%</b>
+							</td>
+						</tr>
+						<tr>
+							<td class="blank-cell">
+							</td>
+							<th>
+								Dietary Fiber
+								1g
+							</th>
+							<td>
+								<b>4%</b>
+							</td>
+						</tr>
+						<tr>
+							<td class="blank-cell">
+							</td>
+							<th>
+								Sugars
+								14g
+							</th>
+							<td>
+							</td>
+						</tr>
+						<tr class="thick-end">
+							<th colspan="2">
+								<b>Protein</b>
+								3g
+							</th>
+							<td>
+							</td>
 						</tr>
 					</tbody>
 				</table>
 
-				<p class="small-info">
-					Calories per gram:
-				</p>
-				<p class="small-info text-center">
-					Fat 9
-					&bull;
-					Carbohydrate 4
-					&bull;
-					Protein 4
-				</p>
+				<table class="performance-facts__table--grid">
+					<tbody>
+						<tr>
+							<td colspan="2">
+								Vitamin A
+								10%
+							</td>
+							<td>
+								Vitamin C
+								0%
+							</td>
+						</tr>
+						<tr class="thin-end">
+							<td colspan="2">
+								Calcium
+								10%
+							</td>
+							<td>
+								Iron
+								6%
+							</td>
+						</tr>
+					</tbody>
+				</table>
 
+				<p class="small-info">* Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or lower depending on your calorie needs:</p>
+
+				
 			</section>
 			<section data-size="pint" class="performance-facts hide">
 				<header class="performance-facts__header">
-					<h1 class="performance-facts__title">Nutrition Facts - PINT</h1>
+					<h1 class="performance-facts__title">Nutrition Facts - pint</h1>
 					<p>Serving Size 1/2 cup (about 82g)
 						<p>Serving Per Container 8</p>
 				</header>
@@ -493,65 +780,7 @@ if ( post_password_required() ) {
 
 				<p class="small-info">* Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or lower depending on your calorie needs:</p>
 
-				<table class="performance-facts__table--small small-info">
-					<thead>
-						<tr>
-							<td colspan="2"></td>
-							<th>Calories:</th>
-							<th>2,000</th>
-							<th>2,500</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th colspan="2">Total Fat</th>
-							<td>Less than</td>
-							<td>65g</td>
-							<td>80g</td>
-						</tr>
-						<tr>
-							<td class="blank-cell"></td>
-							<th>Saturated Fat</th>
-							<td>Less than</td>
-							<td>20g</td>
-							<td>25g</td>
-						</tr>
-						<tr>
-							<th colspan="2">Cholesterol</th>
-							<td>Less than</td>
-							<td>300mg</td>
-							<td>300 mg</td>
-						</tr>
-						<tr>
-							<th colspan="2">Sodium</th>
-							<td>Less than</td>
-							<td>2,400mg</td>
-							<td>2,400mg</td>
-						</tr>
-						<tr>
-							<th colspan="3">Total Carbohydrate</th>
-							<td>300g</td>
-							<td>375g</td>
-						</tr>
-						<tr>
-							<td class="blank-cell"></td>
-							<th colspan="2">Dietary Fiber</th>
-							<td>25g</td>
-							<td>30g</td>
-						</tr>
-					</tbody>
-				</table>
-
-				<p class="small-info">
-					Calories per gram:
-				</p>
-				<p class="small-info text-center">
-					Fat 9
-					&bull;
-					Carbohydrate 4
-					&bull;
-					Protein 4
-				</p>
+				
 
 			</section>
 			<section data-size="cup" class="performance-facts hide">
@@ -700,77 +929,40 @@ if ( post_password_required() ) {
 
 				<p class="small-info">* Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or lower depending on your calorie needs:</p>
 
-				<table class="performance-facts__table--small small-info">
-					<thead>
-						<tr>
-							<td colspan="2"></td>
-							<th>Calories:</th>
-							<th>2,000</th>
-							<th>2,500</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th colspan="2">Total Fat</th>
-							<td>Less than</td>
-							<td>65g</td>
-							<td>80g</td>
-						</tr>
-						<tr>
-							<td class="blank-cell"></td>
-							<th>Saturated Fat</th>
-							<td>Less than</td>
-							<td>20g</td>
-							<td>25g</td>
-						</tr>
-						<tr>
-							<th colspan="2">Cholesterol</th>
-							<td>Less than</td>
-							<td>300mg</td>
-							<td>300 mg</td>
-						</tr>
-						<tr>
-							<th colspan="2">Sodium</th>
-							<td>Less than</td>
-							<td>2,400mg</td>
-							<td>2,400mg</td>
-						</tr>
-						<tr>
-							<th colspan="3">Total Carbohydrate</th>
-							<td>300g</td>
-							<td>375g</td>
-						</tr>
-						<tr>
-							<td class="blank-cell"></td>
-							<th colspan="2">Dietary Fiber</th>
-							<td>25g</td>
-							<td>30g</td>
-						</tr>
-					</tbody>
-				</table>
-
-				<p class="small-info">
-					Calories per gram:
-				</p>
-				<p class="small-info text-center">
-					Fat 9
-					&bull;
-					Carbohydrate 4
-					&bull;
-					Protein 4
-				</p>
-
 			</section>
 		</div>
-		<div>
+		
+		<div class="ingredients">
 			<h3>Ingredients</h3>
 			<p><?php the_field('ingredients'); ?></p>
 			<h3>Allergy Information</h3>
-			<p><?php the_field('allergens'); ?></p>
+			<p>Contains: <?php the_field('allergens'); ?></p><br />
 			<small>Note: Nutritional properties of products intended for sale in high altitude areas may vary due to specific manufacturing practices used to maintain product quality. Please refer to the nutrition facts panel on package for current details.</small>
-		</div>
-	<div>
+			<div class="allergyIcons">
 
+				<?php
+
+				// Load field settings and values.
+				$allergyIcons = get_field_object('allergy_icons');
+				$selectedIcons = $allergyIcons['value'];
+
+				// Display labels.
+				if( $selectedIcons ): ?>
+					<?php foreach( $selectedIcons as $key => $value ): ?>
+						<img src="<?php echo get_stylesheet_directory_uri();?>/images/<?php echo $value;?>.png" alt="<?php echo $value;?>"/> 
+					<?php endforeach; ?>
+				<?php endif; ?>
+
+				</div>
+
+			<div class ="findContainer" >
+				<div class="findUs">Find Cedar Crest near you!</div>
+				<div class="sim-btn-group product-find"><a href="https://cedarcrestsite.wpengine.com/stores">STORES</a><a href="https://cedarcrestsite.wpengine.com/parlor-locator/">PARLORS</a>
+			</div>	
+			</div>
+			
+		</div>
+	</div>
 </div>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
