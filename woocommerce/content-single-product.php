@@ -756,6 +756,49 @@ if ( post_password_required() ) {
 				<table class="performance-facts__table--grid">
 					<tbody>
 						<tr>
+							<th colspan="2">
+								<b>Total Carbohydrate</b>
+								17g
+							</th>
+							<td>
+								<b>6%</b>
+							</td>
+						</tr>
+						<tr>
+							<td class="blank-cell">
+							</td>
+							<th>
+								Dietary Fiber
+								1g
+							</th>
+							<td>
+								<b>4%</b>
+							</td>
+						</tr>
+						<tr>
+							<td class="blank-cell">
+							</td>
+							<th>
+								Sugars
+								14g
+							</th>
+							<td>
+							</td>
+						</tr>
+						<tr class="thick-end">
+							<th colspan="2">
+								<b>Protein</b>
+								3g
+							</th>
+							<td>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table class="performance-facts__table--grid">
+					<tbody>
+						<tr>
 							<td colspan="2">
 								Vitamin A
 								10%

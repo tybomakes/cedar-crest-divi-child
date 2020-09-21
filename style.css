@@ -33,6 +33,11 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     background: #48a3e0;
+<<<<<<< HEAD
+=======
+    align-items: center;
+    justify-items: center;
+>>>>>>> c12159c8f9d16bf31b84dd77efda4a2ee7c595dd
   }
   
   .banner-text {
@@ -43,7 +48,12 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
   
 
   .product-info {
+<<<<<<< HEAD
     margin: 30px 0;
+=======
+    padding-bottom: 60px;
+    padding-top: 30px;
+>>>>>>> c12159c8f9d16bf31b84dd77efda4a2ee7c595dd
   }
   
   .size-section {
@@ -214,6 +224,7 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
 .pint {
   width: 66%;
   justify-self: center;
+<<<<<<< HEAD
 }
 .cup {
   width: 56%;
@@ -248,6 +259,42 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
   display: grid;
   align-self: center;
   line-height: 36px;
+=======
+}
+.cup {
+  width: 56%;
+  justify-self: center;
+}
+
+.woocommerce div.product .product_title {
+  font-size: 72px;
+  font-family: 'Roboto Slab'!important;
+  color: white;
+  text-shadow: 0.1em 0.1em 0.49em #00000060
+}
+
+.featureImg {
+  width: 100%;
+  height: 400px;
+  display: grid;
+}
+
+
+.wmcontainer {
+  display: contents !important;
+}
+
+.wmfo{
+  width: 57%;
+}
+
+.prod-flav {
+  font-size: 72px;
+  font-family: 'Roboto Slab'!important;
+  color: white;
+  text-shadow: 0.1em 0.1em 0.49em #00000060;
+
+>>>>>>> c12159c8f9d16bf31b84dd77efda4a2ee7c595dd
 }
 
 .prod-desc {
@@ -255,6 +302,11 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
   font-family: 'Nunito',sans-serif;
   line-height: 32px;
   padding: 30px 30px 30px 0pc;
+<<<<<<< HEAD
+=======
+  display: grid;
+  justify-items: flex-end;
+>>>>>>> c12159c8f9d16bf31b84dd77efda4a2ee7c595dd
 }
 
 .main-images {
@@ -264,16 +316,31 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
 }
 
 .descriptors {
+<<<<<<< HEAD
   display: grid;
   grid-template-columns: 2fr 4fr 2fr;
   margin: 30px;
+=======
+  margin: 30px;
+  line-height: 62px;
+  display: grid;
+  align-content: center;
+>>>>>>> c12159c8f9d16bf31b84dd77efda4a2ee7c595dd
 }
 
 .allergyIcons {
   display: grid;
+<<<<<<< HEAD
   grid-template-columns: 1fr 1fr;
   align-self: center;
   grid-gap: 30px;
+=======
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-self: center;
+  grid-gap: 50px;
+  margin-top: 30px;
+  width: 65%;
+>>>>>>> c12159c8f9d16bf31b84dd77efda4a2ee7c595dd
 }
 
 .product-images {
@@ -320,4 +387,8 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
 
 .product-template-default .et_pb_gutters2 .et_pb_column, .et_pb_gutters2.et_pb_row .et_pb_column {
   margin-right: -0.5%!important;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> c12159c8f9d16bf31b84dd77efda4a2ee7c595dd
