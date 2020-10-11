@@ -21,6 +21,9 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
   .single-product .et_pb_gutters2 .et_pb_column_2_3 > .et_pb_row_inner > .et_pb_column_1_3 {
     width: 47.716%;
   }
+
+
+
   
   @media (min-width: 981px) {
     .et_pb_gutters2 .et_pb_column {
@@ -33,6 +36,8 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     background: #48a3e0;
+    align-items: center;
+    justify-items: center;
   }
   
   .banner-text {
@@ -43,7 +48,8 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
   
 
   .product-info {
-    margin: 30px 0;
+    padding-bottom: 60px;
+    padding-top: 30px;
   }
   
   .size-section {
@@ -56,22 +62,43 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
   .size-section > * {
     margin: 12px 30px;
   }
-  
+
+	.size-text {
+		align-self: center;
+		font-family: 'Roboto Slab'!important;
+		text-transform: uppercase!important;
+		font-size: 32px;
+		color: #48a3e0;
+		font-weight: 700;
+	  }
+
+	  .svgbtns-container {
+		display: flex;
+		align-items: flex-end;
+	  }
+
+	.single-product .size-section svg {
+		width: 120px;
+	}
+
   .product-info {
     display: grid;
     grid-template-columns: 1fr 2fr;
   }
   
   
-  
+.size-section .three_gallon ,
+.size-section .scround {
+    margin-left: 18px;
+ }
+
   /* NUTRITION LABELS */
-  .size-activator {
-    
-  }
-    .size-activator.active #Bkgrnd , 
-    .size-activator.active #Text path {
-    fill: #ea994e
-  } 
+  
+
+	.size-activator.active #Bkgrnd , 
+	.size-activator.active #Text path {
+		fill: #ea994e
+	} 
   
   .performance-facts {
     border: 1px solid black;
@@ -82,7 +109,7 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
   }
   
   .hide {
-    display: none;
+    display: none !important;
   }
   
   .performance-facts table {
@@ -181,22 +208,9 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
     border-bottom: 1px solid black;
   }
   
-  .svgbtns {
-    display: flex;
-    width: 30%;
-    /* grid-template-columns: repeat(5,1fr); */
-    align-items: end;
-    align-items: flex-end;
-}
   
-  .size-text {
-    align-self: center;
-    font-family: 'Roboto Slab'!important;
-    text-transform: uppercase!important;
-    font-size: 32px;
-    color: #48a3e0;
-    font-weight: 700;
-  }
+  
+  
 
   table.cart th, #main-content table.cart th, table.cart td, #main-content table.cart td, table.cart tr, #main-content table.cart tr, #content-area table tr, #content-area table td, #content-area table th {
     padding: 0px;
@@ -227,53 +241,59 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
   text-shadow: 0.1em 0.1em 0.49em #00000060
 }
 
-
-
 .featureImg {
   width: 100%;
+  height: 400px;
+  display: grid;
 }
 
-.banner-img {
-  width: 50%;
-  display: flex;
-  align-self: center;
-  justify-self: center;
+
+.wmcontainer {
+  display: contents;
 }
+
 .wmfo{
-  width: 100%;
+  width: 57%;
 }
 
 .prod-flav {
-  font-size: 48px;
-  display: grid;
-  align-self: center;
-  line-height: 36px;
+  font-size: 72px;
+  font-family: 'Roboto Slab'!important;
+  color: white;
+  text-shadow: 0.1em 0.1em 0.49em #00000060;
+
 }
 
 .prod-desc {
   font-size: 23px;
   font-family: 'Nunito',sans-serif;
   line-height: 32px;
-  padding: 30px 30px 30px 0pc;
+/*   padding: 30px 30px 30px 0pc;
+  display: grid;
+  justify-items: flex-end; */
+  color: white;
 }
 
 .main-images {
-  width: 68%;
+/*   width: 68%; */
   align-self: center;
   justify-self: center;
 }
 
 .descriptors {
-  display: grid;
-  grid-template-columns: 2fr 4fr 2fr;
   margin: 30px;
+  line-height: 62px;
+  display: grid;
+  align-content: center;
 }
 
 .allergyIcons {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   align-self: center;
-  grid-gap: 30px;
+  grid-gap: 50px;
+  margin-top: 30px;
+  width: 65%;
 }
 
 .product-images {
@@ -312,6 +332,10 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
   font-size: 16px;
 }
 
+.ingredients p:first-of-type {
+	text-transform: lowercase;
+}
+
 /* Temp Fixing product template gutter issue */
 
 .product-template-default .et_pb_gutters1 .et_pb_column_2_3, .et_pb_gutters1.et_pb_row .et_pb_column_2_3 {
@@ -320,4 +344,29 @@ Developed by Andrew Palmer for Elegant Marketplace www.elegantmarketplace.com Fr
 
 .product-template-default .et_pb_gutters2 .et_pb_column, .et_pb_gutters2.et_pb_row .et_pb_column {
   margin-right: -0.5%!important;
+}
+
+@media (max-width: 767px) {
+	
+	.banner:not(.hide) {
+		display: block;
+		padding-bottom: 30px;
+		padding: 15px;
+	}
+	
+	 .size-section {
+    	display: block;
+		text-align: center;
+  	}
+	.single-product .size-section svg {
+		width: 60px;
+	}
+	.descriptors{
+		display: block;
+		text-align: center;
+		margin: 0;
+	}
+	.wmcontainer {
+		display: none;	
+	}
 }

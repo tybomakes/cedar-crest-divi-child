@@ -221,6 +221,8 @@ function mytheme_body_classes( $classes ) {
 }
 add_filter('body_class', 'mytheme_body_classes', 20);
 
+/* custom icons */
+
 function add_file_types_to_uploads($file_types){
   $new_filetypes = array();
   $new_filetypes['svg'] = 'image/svg+xml';
@@ -229,5 +231,13 @@ function add_file_types_to_uploads($file_types){
   }
   add_filter('upload_mimes', 'add_file_types_to_uploads');
 
+add_filter( 'wpsl_admin_marker_dir', 'custom_admin_marker_dir' );
+
+function custom_admin_marker_dir() {
+
+    $admin_marker_dir = get_stylesheet_directory() . '/wpsl-markers/';
+    
+    return $admin_marker_dir;
+}
 
 ?>
